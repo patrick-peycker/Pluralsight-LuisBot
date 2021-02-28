@@ -3,7 +3,6 @@
 //
 // Generated with Bot Builder V4 SDK Template for Visual Studio EchoBot v4.11.1
 
-using Bot.Helpers;
 using Bot.Services;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
@@ -48,7 +47,7 @@ namespace Bot.Bots
 			logger.LogInformation("Running dialog with MessageActivity.");
 
 			// Run the dialog with the new message Activity.
-			await dialog.Run(turnContext, stateService.DialogStateAccessor, cancellationToken);
+			await dialog.RunAsync(turnContext, stateService.DialogStateAccessor, cancellationToken);
 		}
 	}
 }

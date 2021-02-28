@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Bot.Helpers
+namespace Bot.Services
 {
 	public static class Common
 	{

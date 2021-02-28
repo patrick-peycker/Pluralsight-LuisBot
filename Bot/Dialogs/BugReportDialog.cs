@@ -19,7 +19,7 @@ namespace Bot.Dialogs
 		public BugReportDialog(string dialogId, StateService stateService) : base(dialogId)
 		{
 			this.stateService = stateService ?? throw new ArgumentNullException($"{nameof(stateService)} in BugReportDialog");
-
+			
 			InitializeWaterfallDialog();
 		}
 

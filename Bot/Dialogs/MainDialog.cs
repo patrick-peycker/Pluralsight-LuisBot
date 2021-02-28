@@ -22,17 +22,6 @@ namespace Bot.Dialogs
 
 		private void InitializeWaterfallDialog()
 		{
-			/**
-             * We are going to use a waterfall dialog to frame-up our conversation.
-             * The great thing about the waterfall dialog is that it gives us a good
-             * back and forth template to utilize for our conversation.
-             * 
-             * The first thing that we are going to do set-up our waterfall dialog
-             * is to establish all the steps by creating an instance of the waterfall 
-             * steps below. In the list are the detailed methods that are going to be
-             * called and on what order in the waterfall flow. The order is very important
-             * here since this will be called in the order based on the list.
-             */
 			var waterfallSteps = new WaterfallStep[]
 			{
 				InitialStepAsync,
@@ -52,14 +41,10 @@ namespace Bot.Dialogs
 
 		private async Task<DialogTurnResult> InitialStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
 		{
-			/**
-             * First, we use the dispatch model to determine which 
-             * cognitive service (LUIS or QnA) to use
-             */
+			// First, we use the dispatch model to determine which cognitive service (LUIS or QnA) to use
 			var recognizerResult = await BotServices.Dispatch.RecognizeAsync(stepContext.Context, cancellationToken);
-			/**
-             * top intent tell us which cognitive service to use
-             */
+
+			// top intent tell us which cognitive service to use
 			var topIntent = recognizerResult.GetTopScoringIntent();
 
 			switch (topIntent.intent)

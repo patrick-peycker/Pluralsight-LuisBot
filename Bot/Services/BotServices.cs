@@ -9,7 +9,7 @@ namespace Bot.Services
 
 		public BotServices(IConfiguration configuration)
 		{
-			var luisApplication = new LuisApplication(configuration["Luis:AppId"], configuration["Luis:APIKey"], configuration["Luis:Url"]);
+			var luisApplication = new LuisApplication(configuration["Luis:AppId"], configuration["Luis:APIKey"], $"https://{configuration["Luis:APIHostName"]}.api.cognitive.microsoft.com");
 
 			var recognizerOptions = new LuisRecognizerOptionsV3(luisApplication)
 			{
